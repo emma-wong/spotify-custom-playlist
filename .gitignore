@@ -1,5 +1,6 @@
 # Don't import to repo
 config.yaml
+.cache*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
