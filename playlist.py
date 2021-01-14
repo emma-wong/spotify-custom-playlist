@@ -13,7 +13,7 @@ def get_top_25():
     tracks = []
 
     # make spotify call
-    results = sp.current_user_top_tracks(limit=25, offset=0,time_range='short_term')
+    results = sp.current_user_top_tracks(limit=25, offset=0, time_range='short_term')
     for track in results['items']:
         tracks.append(track['id'])
 
