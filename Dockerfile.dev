@@ -1,0 +1,19 @@
+#FROM is the base image for which we will run our application
+FROM node:alpine
+
+# Working Directory of our Application
+WORKDIR /my-app
+
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /my-app/node_modules/.bin:$PATH
+
+# install app dependencies
+COPY ./app/package.json /my-app
+COPY ./app/package-lock.json /my-app
+RUN npm install
+
+# add app
+COPY ./app /my-app
+
+# Start app?
+CMD ["npm", "start"]
